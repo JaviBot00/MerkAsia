@@ -1,4 +1,4 @@
-package com.politecnicomalaga.tienda.view;
+package com.politecnicomalaga.merkasia.view;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

@@ -1,16 +1,15 @@
-package com.politecnicomalaga.tienda.view;
+package com.politecnicomalaga.merkasia.view;
 
-import com.politecnicomalaga.tienda.controller.Controlador;
+import com.politecnicomalaga.merkasia.controller.Controller;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class FindClienteXDNI extends HttpServlet {
+public class ListProducts extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        String dni = req.getParameter("dni");
-        ServletUtils.writeJson(res, (new Controlador()).findClienteXDNI(dni));
+        ServletUtils.writeJson(res, new Controller().listProducts());
     }
 }

@@ -4,53 +4,53 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<!--    FindClienteXDNI  -->
+<!--    FindClientDNI  -->
     <servlet>
-        <servlet-name>FindClienteXDNI</servlet-name>
-        <servlet-class>com.politecnicomalaga.tienda.view.FindClienteXDNI</servlet-class>
+        <servlet-name>FindClientDNI</servlet-name>
+        <servlet-class>com.politecnicomalaga.merkasia.view.FindClientDNI</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FindClienteXDNI</servlet-name>
+        <servlet-name>FindClientDNI</servlet-name>
         <url-pattern>/find-cliente</url-pattern>
     </servlet-mapping>
 
-<!--    FindProductoXCodigo-->
+<!--    FindProductCode-->
     <servlet>
-        <servlet-name>FindProductoXCodigo</servlet-name>
-        <servlet-class>com.politecnicomalaga.tienda.view.FindProductoXCodigo</servlet-class>
+        <servlet-name>FindProductCode</servlet-name>
+        <servlet-class>com.politecnicomalaga.merkasia.view.FindProductCode</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FindProductoXCodigo</servlet-name>
+        <servlet-name>FindProductCode</servlet-name>
         <url-pattern>/find-producto</url-pattern>
     </servlet-mapping>
 
 <!--    ImportData-->
     <servlet>
         <servlet-name>ImportData</servlet-name>
-        <servlet-class>com.politecnicomalaga.tienda.view.ImportData</servlet-class>
+        <servlet-class>com.politecnicomalaga.merkasia.view.ImportData</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ImportData</servlet-name>
         <url-pattern>/import-data</url-pattern>
     </servlet-mapping>
 
-<!--    ListAllProductos-->
+<!--    ListProducts-->
     <servlet>
-        <servlet-name>ListAllProductos</servlet-name>
-        <servlet-class>com.politecnicomalaga.tienda.view.ListAllProductos</servlet-class>
+        <servlet-name>ListProducts</servlet-name>
+        <servlet-class>com.politecnicomalaga.merkasia.view.ListProducts</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ListAllProductos</servlet-name>
+        <servlet-name>ListProducts</servlet-name>
         <url-pattern>/list-productos</url-pattern>
     </servlet-mapping>
 
-<!--    ListProductosXPedido-->
+<!--    ListProductsOrder-->
     <servlet>
-        <servlet-name>ListProductosXPedido</servlet-name>
-        <servlet-class>com.politecnicomalaga.tienda.view.ListProductosXPedido</servlet-class>
+        <servlet-name>ListProductsOrder</servlet-name>
+        <servlet-class>com.politecnicomalaga.merkasia.view.ListProductsOrder</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ListProductosXPedido</servlet-name>
+        <servlet-name>ListProductsOrder</servlet-name>
         <url-pattern>/list-producto-pedido</url-pattern>
     </servlet-mapping>
 </web-app>

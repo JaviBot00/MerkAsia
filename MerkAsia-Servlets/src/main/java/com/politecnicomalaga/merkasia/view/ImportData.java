@@ -1,6 +1,6 @@
-package com.politecnicomalaga.tienda.view;
+package com.politecnicomalaga.merkasia.view;
 
-import com.politecnicomalaga.tienda.controller.Controlador;
+import com.politecnicomalaga.merkasia.controller.Controller;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ public class ImportData extends HttpServlet {
 
         String json = sb.toString();
         try {
-            ServletUtils.writeJson(res, new Controlador().importData(json));
+            ServletUtils.writeJson(res, new Controller().importData(json));
 
         } catch (IllegalArgumentException e) {
             res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -37,7 +37,7 @@ public class ImportData extends HttpServlet {
 //            int    stock          = Integer.parseInt(req.getParameter("stock"));
 //            String expirationDate = req.getParameter("expirationDate");
 //
-//            ServletUtils.writeJson(res, new Controlador().importData(
+//            ServletUtils.writeJson(res, new Controller().importData(
 //                code, description, price, stock, expirationDate));
 //
 //        } catch (IllegalArgumentException e) {
