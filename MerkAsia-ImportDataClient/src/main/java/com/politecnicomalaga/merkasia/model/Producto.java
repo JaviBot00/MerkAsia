@@ -1,6 +1,7 @@
 package com.politecnicomalaga.merkasia.model;
 
 public class Producto {
+
     private int idProducto;
     private String descripcion;
     private double precioUnitario;

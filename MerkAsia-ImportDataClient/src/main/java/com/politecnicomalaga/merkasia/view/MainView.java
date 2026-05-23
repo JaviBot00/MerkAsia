@@ -11,11 +11,12 @@ public class MainView {
 
     public void mostrar() {
         System.out.println("=== Cliente importación de datos ===");
-        System.out.print("Ruta del fichero CSV: ");
-        String ruta = scanner.nextLine().trim();
+//        System.out.print("Ruta del fichero CSV: ");
+//        String ruta = scanner.nextLine().trim();
 
         System.out.println("Importando datos...");
-        controller.importar(ruta);
+//        controller.importar(ruta);
+        controller.importar("../data/data.csv");
         System.out.println("Proceso finalizado.");
     }
 }

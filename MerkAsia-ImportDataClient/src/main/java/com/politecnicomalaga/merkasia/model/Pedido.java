@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
+
     private int idPedido;
     private String dniCliente;
     private String fechaPedido;
@@ -27,7 +28,6 @@ public class Pedido {
     }
 
     public void addLineaPedido(LineaPedido linea) {
-        linea.setPedido(this); // mantener la referencia inversa
         this.lineas.add(linea);
     }
 
