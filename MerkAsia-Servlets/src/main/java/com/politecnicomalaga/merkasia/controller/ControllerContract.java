@@ -1,6 +1,6 @@
 package com.politecnicomalaga.merkasia.controller;
 
-public interface DataAccess {
+public interface ControllerContract {
     String listProducts();
     String findProductCode(String code);
     String findClientDNI(String dni);

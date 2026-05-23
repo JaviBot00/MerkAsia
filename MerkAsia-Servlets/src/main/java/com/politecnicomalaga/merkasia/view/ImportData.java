@@ -24,7 +24,6 @@ public class ImportData extends HttpServlet {
         String json = sb.toString();
         try {
             ServletUtils.writeJson(res, new Controller().importData(json));
-
         } catch (IllegalArgumentException e) {
             res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             ServletUtils.writeJson(res, "{\"error\":\"" + e.getMessage() + "\"}");

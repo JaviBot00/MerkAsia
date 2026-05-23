@@ -1,18 +1,18 @@
 package com.politecnicomalaga.merkasia.model;
 
 public class LineaPedido {
-    private int idLinea;
-    private Pedido pedido;       // referencia al objeto en lugar del id
-    private Producto producto;   // referencia al objeto en lugar del id
+
+    private int idPedido;
+    private int idProducto;
     private int cantidad;
     private double precioUnitario;
 
     public LineaPedido() {}
 
-    public LineaPedido(Pedido pedido, Producto producto,
+    public LineaPedido(int idPedido, int idProducto,
                        int cantidad, double precioUnitario) {
-        this.pedido = pedido;
-        this.producto = producto;
+        this.idPedido = idPedido;
+        this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
     }
@@ -21,14 +21,11 @@ public class LineaPedido {
         return cantidad * precioUnitario;
     }
 
-    public int getIdLinea() { return idLinea; }
-    public void setIdLinea(int idLinea) { this.idLinea = idLinea; }
+    public int getIdPedido() { return idPedido; }
+    public void setIdPedido(int idPedido) { this.idPedido = idPedido; }
 
-    public Pedido getPedido() { return pedido; }
-    public void setPedido(Pedido pedido) { this.pedido = pedido; }
-
-    public Producto getProducto() { return producto; }
-    public void setProducto(Producto producto) { this.producto = producto; }
+    public int getIdProducto() { return idProducto; }
+    public void setIdProducto(int idProducto) { this.idProducto = idProducto; }
 
     public int getCantidad() { return cantidad; }
     public void setCantidad(int cantidad) { this.cantidad = cantidad; }

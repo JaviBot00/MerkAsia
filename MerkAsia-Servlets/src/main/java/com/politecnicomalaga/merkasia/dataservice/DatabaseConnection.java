@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/** Provides JDBC connections to the warehouse MySQL database. */
+/** Provides JDBC connections to the merkasia MySQL database. */
 public class DatabaseConnection {
 
-    private static final String URL = "jdbc:mysql://bbdd:3308/tienda";
-    private static final String USER = "tienda_user";
+    private static final String URL = "jdbc:mysql://bbdd:3306/merkasia";
+    private static final String USER = "merkasia_user";
     private static final String PASSWORD = "onlyforyoureyes";
     private static final String CLASSNAME = "com.mysql.cj.jdbc.Driver";
 

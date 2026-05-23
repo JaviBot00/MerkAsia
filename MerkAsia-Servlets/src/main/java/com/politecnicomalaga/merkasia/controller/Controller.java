@@ -7,7 +7,7 @@ import com.politecnicomalaga.merkasia.dataservice.DatabaseAccess;
 import java.sql.SQLException;
 import java.util.Collections;
 
-public class Controller implements DataAccess {
+public class Controller implements ControllerContract {
 
     private static final Gson GSON = new Gson();
 

@@ -1,6 +1,11 @@
 package com.politecnicomalaga.merkasia.dataservice;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import com.politecnicomalaga.merkasia.model.Cliente;
+import com.politecnicomalaga.merkasia.model.LineaPedido;
 import com.politecnicomalaga.merkasia.model.Pedido;
 import com.politecnicomalaga.merkasia.model.Producto;
 
@@ -82,9 +87,85 @@ public class DatabaseAccess implements DataRepository {
     }
 
     @Override
-    public String importData(String jsonDataFromCSV) throws SQLException, ClassNotFoundException {
-        return "";
+    public void importData(String jsonDataFromCSV) throws SQLException, ClassNotFoundException {
+        Gson gson = new Gson();
+        JsonObject root = JsonParser.parseString(jsonDataFromCSV).getAsJsonObject();
+
+        // Parsear listas del JSON
+        List<Producto> productos = gson.fromJson(root.get("productos"), new TypeToken<List<Producto>>(){}.getType());
+        List<Cliente>  clientes  = gson.fromJson(root.get("clientes"),  new TypeToken<List<Cliente>>(){}.getType());
+
+        try (Connection conn = DatabaseConnection.getConnection()) {
+//            conn.setAutoCommit(false); // transacción: o todo o nada
+            try {
+                insertarProductos(conn, productos);
+                for (Cliente cliente : clientes) {
+                    insertarCliente(conn, cliente);
+                    for (Pedido pedido : cliente.getPedidos()) {
+                        insertarPedido(conn, pedido);
+                        for (LineaPedido linea : pedido.getLineas()) {
+                            insertarLinea(conn, linea);
+                        }
+                    }
+                }
+                conn.commit();
+            } catch (SQLException e) {
+                conn.rollback();
+            }
+        }
     }
+
+    // --- Métodos auxiliares INSERT---
+
+    private void insertarProductos(Connection conn, List<Producto> productos) throws SQLException {
+        String sql = "INSERT IGNORE INTO " + TABLE_PRODUCTOS + " (id_producto, descripcion, precio_unitario) VALUES (?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            for (Producto p : productos) {
+                ps.setInt(1, p.getIdProducto());
+                ps.setString(2, p.getDescripcion());
+                ps.setDouble(3, p.getPrecioUnitario());
+                ps.executeUpdate();
+            }
+        }
+    }
+
+    private void insertarCliente(Connection conn, Cliente c) throws SQLException {
+        String sql = "INSERT IGNORE INTO " + TABLE_CLIENTES + " (dni, nombre, apellidos, email, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, c.getDni());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getApellidos());
+            ps.setString(4, c.getEmail());
+            ps.setString(5, c.getTelefono());
+            ps.setString(6, c.getDireccion());
+            ps.executeUpdate();
+        }
+    }
+
+    private void insertarPedido(Connection conn, Pedido p) throws SQLException {
+        String sql = "INSERT IGNORE INTO " + TABLE_PEDIDOS + " (id_pedido, dni_cliente, fecha_pedido, num_lineas, total_pedido) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, p.getIdPedido());
+            ps.setString(2, p.getDniCliente());
+            ps.setString(3, p.getFechaPedido());
+            ps.setInt(4, p.getNumLineas());
+            ps.setDouble(5, p.getTotalPedido());
+            ps.executeUpdate();
+        }
+    }
+
+    private void insertarLinea(Connection conn, LineaPedido l) throws SQLException {
+        String sql = "INSERT INTO " + TABLE_LINEA_PEDIDO + " (id_pedido, id_producto, cantidad, precio_unitario) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, l.getIdPedido());
+            ps.setInt(2, l.getIdProducto());
+            ps.setInt(3, l.getCantidad());
+            ps.setDouble(4, l.getPrecioUnitario());
+            ps.executeUpdate();
+        }
+    }
+
+    // --- Métodos auxiliares PARSER---
 
     private Producto mapRowProducto(ResultSet rs) throws SQLException {
         return new Producto(rs.getInt("id_producto"),
