@@ -1,0 +1,594 @@
+{
+    "clientes": [
+        {
+            "dni": "12345678",
+            "nombre": "Ana",
+            "apellidos": "L�pez",
+            "email": "ana.lopez@example.com",
+            "telefono": "+34 600 111 222",
+            "direccion": "Calle A 10 Madrid",
+            "pedidos": [
+                {
+                    "idPedido": 50001,
+                    "dniCliente": "12345678",
+                    "fechaPedido": "2025-03-12",
+                    "numLineas": 3,
+                    "totalPedido": 701.25,
+                    "lineas": [
+                        {
+                            "idPedido": 50001,
+                            "idProducto": 10001,
+                            "cantidad": 1,
+                            "precioUnitario": 650.0
+                        },
+                        {
+                            "idPedido": 50001,
+                            "idProducto": 10002,
+                            "cantidad": 2,
+                            "precioUnitario": 15.5
+                        },
+                        {
+                            "idPedido": 50001,
+                            "idProducto": 10003,
+                            "cantidad": 1,
+                            "precioUnitario": 20.25
+                        }
+                    ]
+                },
+                {
+                    "idPedido": 50002,
+                    "dniCliente": "12345678",
+                    "fechaPedido": "2025-06-01",
+                    "numLineas": 2,
+                    "totalPedido": 95.5,
+                    "lineas": [
+                        {
+                            "idPedido": 50002,
+                            "idProducto": 10004,
+                            "cantidad": 1,
+                            "precioUnitario": 80.0
+                        },
+                        {
+                            "idPedido": 50002,
+                            "idProducto": 10002,
+                            "cantidad": 1,
+                            "precioUnitario": 15.5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "23456789",
+            "nombre": "Luis",
+            "apellidos": "P�rez",
+            "email": "luis.perez@example.com",
+            "telefono": "+34 611 222 333",
+            "direccion": "Calle B 20 Valencia",
+            "pedidos": [
+                {
+                    "idPedido": 50003,
+                    "dniCliente": "23456789",
+                    "fechaPedido": "2025-01-20",
+                    "numLineas": 4,
+                    "totalPedido": 542.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50003,
+                            "idProducto": 20001,
+                            "cantidad": 2,
+                            "precioUnitario": 210.0
+                        },
+                        {
+                            "idPedido": 50003,
+                            "idProducto": 20002,
+                            "cantidad": 4,
+                            "precioUnitario": 8.5
+                        },
+                        {
+                            "idPedido": 50003,
+                            "idProducto": 10002,
+                            "cantidad": 2,
+                            "precioUnitario": 15.5
+                        },
+                        {
+                            "idPedido": 50003,
+                            "idProducto": 20004,
+                            "cantidad": 1,
+                            "precioUnitario": 60.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "34567890",
+            "nombre": "Marta",
+            "apellidos": "Garc�a",
+            "email": "marta.garcia@example.com",
+            "telefono": "+34 622 333 444",
+            "direccion": "Calle C 30 Sevilla",
+            "pedidos": [
+                {
+                    "idPedido": 50004,
+                    "dniCliente": "34567890",
+                    "fechaPedido": "2025-07-15",
+                    "numLineas": 2,
+                    "totalPedido": 300.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50004,
+                            "idProducto": 30001,
+                            "cantidad": 1,
+                            "precioUnitario": 250.0
+                        },
+                        {
+                            "idPedido": 50004,
+                            "idProducto": 30002,
+                            "cantidad": 1,
+                            "precioUnitario": 50.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "45678901",
+            "nombre": "Carlos",
+            "apellidos": "Ruiz",
+            "email": "carlos.ruiz@example.com",
+            "telefono": "+34 633 444 555",
+            "direccion": "Calle D 40 Bilbao",
+            "pedidos": [
+                {
+                    "idPedido": 50005,
+                    "dniCliente": "45678901",
+                    "fechaPedido": "2025-02-10",
+                    "numLineas": 5,
+                    "totalPedido": 541.55,
+                    "lineas": [
+                        {
+                            "idPedido": 50005,
+                            "idProducto": 40001,
+                            "cantidad": 2,
+                            "precioUnitario": 120.0
+                        },
+                        {
+                            "idPedido": 50005,
+                            "idProducto": 40002,
+                            "cantidad": 2,
+                            "precioUnitario": 75.0
+                        },
+                        {
+                            "idPedido": 50005,
+                            "idProducto": 40003,
+                            "cantidad": 1,
+                            "precioUnitario": 85.0
+                        },
+                        {
+                            "idPedido": 50005,
+                            "idProducto": 10002,
+                            "cantidad": 3,
+                            "precioUnitario": 15.5
+                        },
+                        {
+                            "idPedido": 50005,
+                            "idProducto": 40005,
+                            "cantidad": 2,
+                            "precioUnitario": 5.65
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "56789012",
+            "nombre": "Luc�a",
+            "apellidos": "Fern�ndez",
+            "email": "lucia.fernandez@example.com",
+            "telefono": "+34 644 555 666",
+            "direccion": "Calle E 50 M�laga",
+            "pedidos": [
+                {
+                    "idPedido": 50006,
+                    "dniCliente": "56789012",
+                    "fechaPedido": "2025-08-21",
+                    "numLineas": 3,
+                    "totalPedido": 210.3,
+                    "lineas": [
+                        {
+                            "idPedido": 50006,
+                            "idProducto": 50001,
+                            "cantidad": 1,
+                            "precioUnitario": 80.0
+                        },
+                        {
+                            "idPedido": 50006,
+                            "idProducto": 50002,
+                            "cantidad": 2,
+                            "precioUnitario": 45.15
+                        },
+                        {
+                            "idPedido": 50006,
+                            "idProducto": 20004,
+                            "cantidad": 1,
+                            "precioUnitario": 40.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "67890123",
+            "nombre": "Javier",
+            "apellidos": "S�nchez",
+            "email": "javier.sanchez@example.com",
+            "telefono": "+34 655 666 777",
+            "direccion": "Calle F 60 Zaragoza",
+            "pedidos": [
+                {
+                    "idPedido": 50007,
+                    "dniCliente": "67890123",
+                    "fechaPedido": "2025-04-05",
+                    "numLineas": 6,
+                    "totalPedido": 1650.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 60001,
+                            "cantidad": 1,
+                            "precioUnitario": 1200.0
+                        },
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 20001,
+                            "cantidad": 2,
+                            "precioUnitario": 210.0
+                        },
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 10004,
+                            "cantidad": 1,
+                            "precioUnitario": 80.0
+                        },
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 10002,
+                            "cantidad": 1,
+                            "precioUnitario": 15.5
+                        },
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 50001,
+                            "cantidad": 1,
+                            "precioUnitario": 30.0
+                        },
+                        {
+                            "idPedido": 50007,
+                            "idProducto": 20004,
+                            "cantidad": 1,
+                            "precioUnitario": 75.0
+                        }
+                    ]
+                },
+                {
+                    "idPedido": 50008,
+                    "dniCliente": "67890123",
+                    "fechaPedido": "2025-09-10",
+                    "numLineas": 2,
+                    "totalPedido": 200.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50008,
+                            "idProducto": 60007,
+                            "cantidad": 1,
+                            "precioUnitario": 100.0
+                        },
+                        {
+                            "idPedido": 50008,
+                            "idProducto": 60008,
+                            "cantidad": 2,
+                            "precioUnitario": 50.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "78901234",
+            "nombre": "Elena",
+            "apellidos": "Mart�n",
+            "email": "elena.martin@example.com",
+            "telefono": "+34 666 777 888",
+            "direccion": "Calle G 70 Granada",
+            "pedidos": [
+                {
+                    "idPedido": 50009,
+                    "dniCliente": "78901234",
+                    "fechaPedido": "2025-05-18",
+                    "numLineas": 2,
+                    "totalPedido": 95.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50009,
+                            "idProducto": 10002,
+                            "cantidad": 2,
+                            "precioUnitario": 15.5
+                        },
+                        {
+                            "idPedido": 50009,
+                            "idProducto": 10004,
+                            "cantidad": 1,
+                            "precioUnitario": 64.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "89012345",
+            "nombre": "Pedro",
+            "apellidos": "Navarro",
+            "email": "pedro.navarro@example.com",
+            "telefono": "+34 677 888 999",
+            "direccion": "Calle H 80 Murcia",
+            "pedidos": [
+                {
+                    "idPedido": 50010,
+                    "dniCliente": "89012345",
+                    "fechaPedido": "2025-10-11",
+                    "numLineas": 3,
+                    "totalPedido": 330.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50010,
+                            "idProducto": 80001,
+                            "cantidad": 1,
+                            "precioUnitario": 150.0
+                        },
+                        {
+                            "idPedido": 50010,
+                            "idProducto": 80002,
+                            "cantidad": 2,
+                            "precioUnitario": 60.0
+                        },
+                        {
+                            "idPedido": 50010,
+                            "idProducto": 20002,
+                            "cantidad": 3,
+                            "precioUnitario": 20.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "90123456",
+            "nombre": "Sof�a",
+            "apellidos": "Ortega",
+            "email": "sofia.ortega@example.com",
+            "telefono": "+34 688 999 000",
+            "direccion": "Calle I 90 Valladolid",
+            "pedidos": [
+                {
+                    "idPedido": 50011,
+                    "dniCliente": "90123456",
+                    "fechaPedido": "2025-11-25",
+                    "numLineas": 4,
+                    "totalPedido": 410.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50011,
+                            "idProducto": 30001,
+                            "cantidad": 1,
+                            "precioUnitario": 250.0
+                        },
+                        {
+                            "idPedido": 50011,
+                            "idProducto": 30002,
+                            "cantidad": 1,
+                            "precioUnitario": 40.0
+                        },
+                        {
+                            "idPedido": 50011,
+                            "idProducto": 90003,
+                            "cantidad": 1,
+                            "precioUnitario": 70.0
+                        },
+                        {
+                            "idPedido": 50011,
+                            "idProducto": 90004,
+                            "cantidad": 2,
+                            "precioUnitario": 25.0
+                        }
+                    ]
+                },
+                {
+                    "idPedido": 50012,
+                    "dniCliente": "90123456",
+                    "fechaPedido": "2026-01-05",
+                    "numLineas": 2,
+                    "totalPedido": 120.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50012,
+                            "idProducto": 90005,
+                            "cantidad": 2,
+                            "precioUnitario": 30.0
+                        },
+                        {
+                            "idPedido": 50012,
+                            "idProducto": 90006,
+                            "cantidad": 3,
+                            "precioUnitario": 20.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dni": "11235813",
+            "nombre": "Diego",
+            "apellidos": "Torres",
+            "email": "diego.torres@example.com",
+            "telefono": "+34 699 000 111",
+            "direccion": "Calle J 100 Alicante",
+            "pedidos": [
+                {
+                    "idPedido": 50013,
+                    "dniCliente": "11235813",
+                    "fechaPedido": "2025-12-12",
+                    "numLineas": 3,
+                    "totalPedido": 540.0,
+                    "lineas": [
+                        {
+                            "idPedido": 50013,
+                            "idProducto": 100001,
+                            "cantidad": 1,
+                            "precioUnitario": 300.0
+                        },
+                        {
+                            "idPedido": 50013,
+                            "idProducto": 10004,
+                            "cantidad": 1,
+                            "precioUnitario": 120.0
+                        },
+                        {
+                            "idPedido": 50013,
+                            "idProducto": 10002,
+                            "cantidad": 2,
+                            "precioUnitario": 60.0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "productos": [
+        {
+            "idProducto": 10001,
+            "descripcion": "Port�til 15\"",
+            "precioUnitario": 650.0
+        },
+        {
+            "idProducto": 10002,
+            "descripcion": "Rat�n inal�mbrico",
+            "precioUnitario": 15.5
+        },
+        {
+            "idProducto": 10003,
+            "descripcion": "Mochila port�til",
+            "precioUnitario": 20.25
+        },
+        {
+            "idProducto": 10004,
+            "descripcion": "Teclado mec�nico",
+            "precioUnitario": 80.0
+        },
+        {
+            "idProducto": 20001,
+            "descripcion": "Monitor 27\"",
+            "precioUnitario": 210.0
+        },
+        {
+            "idProducto": 20002,
+            "descripcion": "Cable HDMI",
+            "precioUnitario": 8.5
+        },
+        {
+            "idProducto": 20004,
+            "descripcion": "Webcam HD",
+            "precioUnitario": 60.0
+        },
+        {
+            "idProducto": 30001,
+            "descripcion": "Tablet 10\"",
+            "precioUnitario": 250.0
+        },
+        {
+            "idProducto": 30002,
+            "descripcion": "Funda tablet",
+            "precioUnitario": 50.0
+        },
+        {
+            "idProducto": 40001,
+            "descripcion": "Disco SSD 1TB",
+            "precioUnitario": 120.0
+        },
+        {
+            "idProducto": 40002,
+            "descripcion": "Memoria RAM 16GB",
+            "precioUnitario": 75.0
+        },
+        {
+            "idProducto": 40003,
+            "descripcion": "Fuente 650W",
+            "precioUnitario": 85.0
+        },
+        {
+            "idProducto": 40005,
+            "descripcion": "Pasta t�rmica",
+            "precioUnitario": 5.65
+        },
+        {
+            "idProducto": 50001,
+            "descripcion": "Altavoces",
+            "precioUnitario": 80.0
+        },
+        {
+            "idProducto": 50002,
+            "descripcion": "Auriculares",
+            "precioUnitario": 45.15
+        },
+        {
+            "idProducto": 60001,
+            "descripcion": "PC sobremesa",
+            "precioUnitario": 1200.0
+        },
+        {
+            "idProducto": 60007,
+            "descripcion": "Disco duro 2TB",
+            "precioUnitario": 100.0
+        },
+        {
+            "idProducto": 60008,
+            "descripcion": "Pendrive 128GB",
+            "precioUnitario": 50.0
+        },
+        {
+            "idProducto": 80001,
+            "descripcion": "Router WiFi 6",
+            "precioUnitario": 150.0
+        },
+        {
+            "idProducto": 80002,
+            "descripcion": "Repetidor WiFi",
+            "precioUnitario": 60.0
+        },
+        {
+            "idProducto": 90003,
+            "descripcion": "L�piz digital",
+            "precioUnitario": 70.0
+        },
+        {
+            "idProducto": 90004,
+            "descripcion": "Protector pantalla",
+            "precioUnitario": 25.0
+        },
+        {
+            "idProducto": 90005,
+            "descripcion": "Cargador USB-C",
+            "precioUnitario": 30.0
+        },
+        {
+            "idProducto": 90006,
+            "descripcion": "Cable USB-C",
+            "precioUnitario": 20.0
+        },
+        {
+            "idProducto": 100001,
+            "descripcion": "Monitor curvo",
+            "precioUnitario": 300.0
+        }
+    ]
+}

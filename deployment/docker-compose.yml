@@ -1,34 +1,41 @@
-version: "3"
+# version: '3'
 services:
-  servidorweb:
-    image: tomcat:9.0
-    ports:
-      - "8888:8080"
-    volumes:
-      - ./web:/usr/local/tomcat/webapps
-    depends_on:
-      - "bbdd"
+    bbdd:
+        image: mysql:8.0
+        restart: always
+        environment:
+            MYSQL_DATABASE: merkasia
+            MYSQL_ROOT_PASSWORD: secretone
+            MYSQL_USER: merkasia_user
+            MYSQL_PASSWORD: onlyforyoureyes
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./db_backup:/docker-entrypoint-initdb.d
+        ports:
+            - '3308:3306'
 
-  bbdd:
-    image: mysql:8.0
-    environment:
-      MYSQL_DATABASE: tienda
-      MYSQL_ROOT_PASSWORD: secretone
-      MYSQL_USER: tienda_user
-      MYSQL_PASSWORD: onlyforyoureyes
-    volumes:
-      - ./.db_data:/var/lib/mysql
-      - ./.db_backup:/docker-entrypoint-initdb.d
-    ports:
-      - "3308:3306"
+    servidorweb:
+        # image: tomcat:9.0
+        build:
+            context: .. # raíz del proyecto donde está el Dockerfile y el pom.xml
+            dockerfile: Dockerfile
+        ports:
+            - '8888:8080'
+        # volumes:
+        #     - ./web:/usr/local/tomcat/webapps
+        depends_on:
+            - 'bbdd'
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:5.2
-    environment:
-      PMA_HOST: "bbdd"
-      PMA_USER: "root"
-      PMA_PASSWORD: "secretone"
-    depends_on:
-      - "bbdd"
-    ports:
-      - "8081:80"
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:5.2
+        environment:
+            PMA_HOST: 'bbdd'
+            PMA_USER: 'root'
+            PMA_PASSWORD: 'secretone'
+        ports:
+            - '8081:80'
+        depends_on:
+            - 'bbdd'
+
+volumes:
+    db_data:
