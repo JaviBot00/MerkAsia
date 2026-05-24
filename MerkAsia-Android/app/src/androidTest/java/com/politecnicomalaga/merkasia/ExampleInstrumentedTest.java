@@ -1,4 +1,4 @@
-package com.politecnicomalaga.tienda;
+package com.politecnicomalaga.merkasia;
 
 import android.content.Context;
 
