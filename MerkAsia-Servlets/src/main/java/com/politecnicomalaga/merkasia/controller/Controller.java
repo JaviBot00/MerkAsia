@@ -55,6 +55,15 @@ public class Controller implements ControllerContract {
     }
 
     @Override
+    public String listClients() {
+        try {
+            return GSON.toJson(repository.listClients());
+        } catch (SQLException | ClassNotFoundException e) {
+            return errorJson("findClientDNI", e);
+        }
+    }
+
+    @Override
     public String listProductsOrder(String dni, String pedido) {
         try {
             return GSON.toJson(repository.listProductsOrder(dni, pedido));

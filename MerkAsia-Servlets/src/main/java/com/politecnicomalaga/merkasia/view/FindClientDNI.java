@@ -11,6 +11,8 @@ public class FindClientDNI extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String dni = req.getParameter("dni");
-        ServletUtils.writeJson(res, (new Controller()).findClientDNI(dni));
+        ServletUtils.writeJson(res, dni == null || dni.trim().isEmpty()
+            ? (new Controller()).listClients()
+            : (new Controller()).findClientDNI(dni));
     }
 }

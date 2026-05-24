@@ -18,6 +18,7 @@ public interface DataRepository {
     List<Producto> listProducts() throws SQLException, ClassNotFoundException;
     List<Producto> findProductCode(String code) throws SQLException, ClassNotFoundException;
     List<Cliente> findClientDNI(String dni) throws SQLException, ClassNotFoundException;
+    List<Cliente> listClients() throws SQLException, ClassNotFoundException;
     List<Pedido> listProductsOrder(String dni, String pedido) throws SQLException, ClassNotFoundException;
     void importData(String jsonDataFromCSV) throws SQLException, ClassNotFoundException;
 }

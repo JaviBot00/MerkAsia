@@ -72,6 +72,18 @@ public class DatabaseAccess implements DataRepository {
     }
 
     @Override
+    public List<Cliente> listClients() throws SQLException, ClassNotFoundException {
+        List<Cliente> results = new ArrayList<>();
+        String sql = "SELECT dni, nombre, apellidos, email, telefono, direccion FROM " + TABLE_CLIENTES;
+        try (Connection conn = DatabaseConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) results.add(mapRowCliente(rs));
+            }
+        }
+        return results;
+    }
+
+    @Override
     public List<Pedido> listProductsOrder(String dni, String pedido) throws SQLException, ClassNotFoundException {
         List<Pedido> results = new ArrayList<>();
         String sql = "SELECT id_pedido, dni_cliente, fecha_pedido, num_lineas, total_pedido FROM " + TABLE_PEDIDOS
