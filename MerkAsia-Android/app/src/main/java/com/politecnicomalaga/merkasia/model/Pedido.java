@@ -1,35 +1,43 @@
-package com.politecnicomalaga.tienda.model;
+package com.politecnicomalaga.merkasia.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
 
     private int idPedido;
-    private String dni_cliente;
-    private LocalDate fechaPedido;
+    private String dniCliente;
+    private String fechaPedido;
     private int numLineas;
-    private Double totalPedido;
+    private double totalPedido;
     private List<LineaPedido> lineas;
 
     public Pedido() {
         this.lineas = new ArrayList<>();
     }
 
-    public Pedido(int idPedido, String dni_cliente, LocalDate fechaPedido, int numLineas, Double totalPedido) {
+    public Pedido(int idPedido, String dniCliente, String fechaPedido,
+                  int numLineas, double totalPedido) {
         this.idPedido = idPedido;
-        this.dni_cliente = dni_cliente;
+        this.dniCliente = dniCliente;
         this.fechaPedido = fechaPedido;
         this.numLineas = numLineas;
         this.totalPedido = totalPedido;
         this.lineas = new ArrayList<>();
     }
 
-    public void addLinea(LineaPedido linea) {
-        lineas.add(linea);
-        linea.setPedido(this);
-        numLineas = lineas.size();
+    public void addLineaPedido(LineaPedido linea) {
+        this.lineas.add(linea);
+    }
+
+    public int calcularNumLineas() {
+        return this.lineas.size();
+    }
+
+    public double calcularTotal() {
+        return this.lineas.stream()
+            .mapToDouble(l -> l.getCantidad() * l.getPrecioUnitario())
+            .sum();
     }
 
     public int getIdPedido() {
@@ -40,19 +48,19 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public String getDni_cliente() {
-        return dni_cliente;
+    public String getDniCliente() {
+        return dniCliente;
     }
 
-    public void setDni_cliente(String dni_cliente) {
-        this.dni_cliente = dni_cliente;
+    public void setDniCliente(String dniCliente) {
+        this.dniCliente = dniCliente;
     }
 
-    public LocalDate getFechaPedido() {
+    public String getFechaPedido() {
         return fechaPedido;
     }
 
-    public void setFechaPedido(LocalDate fechaPedido) {
+    public void setFechaPedido(String fechaPedido) {
         this.fechaPedido = fechaPedido;
     }
 
@@ -64,11 +72,11 @@ public class Pedido {
         this.numLineas = numLineas;
     }
 
-    public Double getTotalPedido() {
+    public double getTotalPedido() {
         return totalPedido;
     }
 
-    public void setTotalPedido(Double totalPedido) {
+    public void setTotalPedido(double totalPedido) {
         this.totalPedido = totalPedido;
     }
 

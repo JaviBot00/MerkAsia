@@ -1,8 +1,7 @@
-package com.politecnicomalaga.tienda.model;
+package com.politecnicomalaga.merkasia.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Cliente {
 
@@ -18,7 +17,8 @@ public class Cliente {
         this.pedidos = new ArrayList<>();
     }
 
-    public Cliente(String dni, String nombre, String apellidos, String email, String telefono, String direccion) {
+    public Cliente(String dni, String nombre, String apellidos,
+                   String email, String telefono, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -28,6 +28,7 @@ public class Cliente {
         this.pedidos = new ArrayList<>();
     }
 
+    // Getters y Setters
     public String getDni() {
         return dni;
     }
@@ -84,4 +85,7 @@ public class Cliente {
         this.pedidos = pedidos;
     }
 
+    public void addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
+    }
 }

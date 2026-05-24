@@ -1,18 +1,15 @@
-package com.politecnicomalaga.tienda.model;
-
-import java.math.BigDecimal;
-import java.util.Objects;
+package com.politecnicomalaga.merkasia.model;
 
 public class Producto {
 
     private int idProducto;
     private String descripcion;
-    private Double precioUnitario;
+    private double precioUnitario;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String descripcion, Double precioUnitario) {
+    public Producto(int idProducto, String descripcion, double precioUnitario) {
         this.idProducto = idProducto;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
@@ -22,8 +19,8 @@ public class Producto {
         return idProducto;
     }
 
-    public void setIdProducto(int id) {
-        this.idProducto = id;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getDescripcion() {
@@ -34,11 +31,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Double getPrecioUnitario() {
+    public double getPrecioUnitario() {
         return precioUnitario;
     }
 
-    public void setPrecioUnitario(Double precioUnitario) {
+    public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 }
