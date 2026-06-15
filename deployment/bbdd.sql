@@ -2,16 +2,16 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 
 -- =====================================================
--- Base de datos tienda informática
+-- Base de datos MerkAsia informática
 -- Script MySQL 8.x
 -- =====================================================
 
-DROP DATABASE IF EXISTS tienda;
-CREATE DATABASE tienda
+DROP DATABASE IF EXISTS merkasia;
+CREATE DATABASE merkasia
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
-USE tienda;
+USE merkasia;
 
 -- =====================================================
 -- TABLA CLIENTES
@@ -45,7 +45,7 @@ CREATE TABLE pedidos (
     fecha_pedido      DATE NOT NULL,
     num_lineas        INT NOT NULL,
     total_pedido      DECIMAL(12,2) NOT NULL,
-    
+
     CONSTRAINT fk_pedido_cliente
         FOREIGN KEY (dni_cliente)
         REFERENCES clientes(dni)

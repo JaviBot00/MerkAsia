@@ -108,7 +108,7 @@ public class DatabaseAccess implements DataRepository {
         List<Cliente>  clientes  = gson.fromJson(root.get("clientes"),  new TypeToken<List<Cliente>>(){}.getType());
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-//            conn.setAutoCommit(false); // transacción: o todo o nada
+            conn.setAutoCommit(false); // transacción: o todo o nada
             try {
                 insertarProductos(conn, productos);
                 for (Cliente cliente : clientes) {
@@ -123,6 +123,9 @@ public class DatabaseAccess implements DataRepository {
                 conn.commit();
             } catch (SQLException e) {
                 conn.rollback();
+                throw e; // para que el Controller capture el error y devuelva errorJson
+            } finally {
+                conn.setAutoCommit(true);
             }
         }
     }

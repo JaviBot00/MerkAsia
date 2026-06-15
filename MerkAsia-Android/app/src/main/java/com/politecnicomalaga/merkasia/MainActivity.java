@@ -26,7 +26,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     private static final String BASE_URL = "http://192.168.1.139:8888/MerkAsia-Servlets";
-    private static final String URL_CLIENTES = BASE_URL + "/find-cliente?dni=";
+    private static final String URL_CLIENTES = BASE_URL + "/find-cliente";
     private static final String URL_PRODUCTOS = BASE_URL + "/list-productos";
     private final OkHttpClient httpClient = new OkHttpClient();
     private final Gson gson = new Gson();

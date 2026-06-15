@@ -23,11 +23,11 @@ public class ImportController {
 
     public void importar(String rutaCSV) {
         try {
-            List<Cliente> clientes        = parser.parsear(rutaCSV);
+            List<Cliente> clientes = parser.parsear(rutaCSV);
             Map<Integer, Producto> productos = parser.getProductos();
 
             Map<String, Object> payload = new HashMap<>();
-            payload.put("clientes",  clientes);
+            payload.put("clientes", clientes);
             payload.put("productos", productos.values());
 
             String json = gson.toJson(payload);

@@ -1,14 +1,11 @@
 package com.politecnicomalaga.merkasia.dataservice;
 
-import com.google.gson.Gson;
 import com.politecnicomalaga.merkasia.model.Cliente;
 import com.politecnicomalaga.merkasia.model.LineaPedido;
 import com.politecnicomalaga.merkasia.model.Pedido;
 import com.politecnicomalaga.merkasia.model.Producto;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
 import java.util.*;
 
 public class CSVParser {
