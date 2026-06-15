@@ -1,3 +1,5 @@
-/infraestructura/.db_backup
-/infraestructura/.db_data
-/infraestructura/web
+**.idea/**
+*.iml
+
+/deployment/db_backup
+/deployment/web

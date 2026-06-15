@@ -1,5 +1,17 @@
 # version: '3'
 services:
+    servidorweb:
+        # image: tomcat:9.0
+        build:
+            context: .. # raíz del proyecto donde está el Dockerfile y el pom.xml
+            dockerfile: Dockerfile
+        ports:
+            - '8888:8080'
+        # volumes:
+        #     - ./web:/usr/local/tomcat/webapps
+        depends_on:
+            - 'bbdd'
+
     bbdd:
         image: mysql:8.0
         restart: always
@@ -13,18 +25,6 @@ services:
             - ./db_backup:/docker-entrypoint-initdb.d
         ports:
             - '3308:3306'
-
-    servidorweb:
-        # image: tomcat:9.0
-        build:
-            context: .. # raíz del proyecto donde está el Dockerfile y el pom.xml
-            dockerfile: Dockerfile
-        ports:
-            - '8888:8080'
-        # volumes:
-        #     - ./web:/usr/local/tomcat/webapps
-        depends_on:
-            - 'bbdd'
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:5.2
